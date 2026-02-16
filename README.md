@@ -11,3 +11,6 @@ When importing to blender, move everything into a collection "Tool".
 
 <img width="314" height="78" alt="image" src="https://github.com/user-attachments/assets/071fe393-a19d-42af-8341-e80d64d17015" />
 
+
+
+Run the code in the R6 IK - FK blend file.
