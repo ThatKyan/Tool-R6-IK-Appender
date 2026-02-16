@@ -4,11 +4,9 @@ import bpy
                 
                 
 blender_file_with_tool = r"PATH TO ROBLOX EXPORTED BLEND FILE"
+
 tool_collection_name = r"Tool"
 tool_armature_name = r"ToolArmature"
-
-blender_file_ik_rig = r"PATH TO R6 IK BLEND FILE"
-
 
 def set_collection_visible(layer_collection, collection_name, is_Visible):
 
