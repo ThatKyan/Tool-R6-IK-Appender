@@ -1,25 +1,13 @@
 
 import bpy
 
-def print(data):
-    for window in bpy.context.window_manager.windows:
-        screen = window.screen
-        for area in screen.areas:
-            if area.type == 'CONSOLE':
-                override = {'window': window, 'screen': screen, 'area': area}
-                with bpy.context.temp_override(**override):
-                    # The operator expects 'text' and 'type' arguments
-                    for line in str(data).splitlines():
-                         bpy.ops.console.scrollback_append(text=line, type="OUTPUT")
-                return # Stop after finding the first console
                 
                 
-                
-blender_file_with_tool = r"C:\Users\Kyan\Documents\BlenderFiles\Chaotic\fastSword\fastSwordRobloxRig.blend"
+blender_file_with_tool = r"PATH TO ROBLOX EXPORTED BLEND FILE"
 tool_collection_name = r"Tool"
 tool_armature_name = r"ToolArmature"
 
-blender_file_ik_rig = r"C:\Users\Kyan\Documents\BlenderFiles\Chaotic\fastSword\R6 IK fast sword.blend"
+blender_file_ik_rig = r"PATH TO R6 IK BLEND FILE"
 
 
 def set_collection_visible(layer_collection, collection_name, is_Visible):
@@ -74,7 +62,6 @@ bpy.context.view_layer.objects.active =  meta_rig
 
 bpy.ops.object.join()
 
-print("meta rig joined")
 
 #####
 
@@ -96,8 +83,6 @@ for obj in [primary_armature, get_tool_armature]:
 bpy.context.view_layer.objects.active =  primary_armature
 
 bpy.ops.object.join()
-
-print("Primary armature joined")
 
 #####
 
@@ -179,6 +164,3 @@ with bpy.context.temp_override(active_object=handleBone):
 ######
 
 set_collection_visible(bpy.context.view_layer.layer_collection, "Internal", True)
-
-
-print("==== SCRIPT ENDED ======")
