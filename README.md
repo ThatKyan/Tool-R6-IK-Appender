@@ -1,7 +1,7 @@
 This is a script for Blender, that quickly appends a tool rig to the R6 IK + FK Blender Rig by Aeresei. 
 https://devforum.roblox.com/t/r6-ik-fk-blender-rig-v21/3586405
 
-<bold Steps: </bold>
+<bold> Steps: </bold>
 
 Using Blender plugin in Roblox Studio, export a rig of a character attached to the tool (I guess you don't really need the character rig actually).
 
