@@ -1,9 +1,10 @@
-
 import bpy
 
                 
                 
-blender_file_with_tool = r"PATH TO ROBLOX EXPORTED BLEND FILE"
+blender_file_with_tool = r"BLENDER FILE WITH EXPORTED TOOL RIG.blend"
+
+
 
 tool_collection_name = r"Tool"
 tool_armature_name = r"ToolArmature"
@@ -12,6 +13,13 @@ def set_collection_visible(layer_collection, collection_name, is_Visible):
 
     if layer_collection.name == collection_name:
         layer_collection.hide_viewport = is_Visible
+        layer_collection.exclude = is_Visible
+        layer_collection.collection.hide_select = is_Visible
+
+        for anObject in layer_collection.collection.objects:
+            anObject.hide_select  = is_Visible
+            anObject.hide_viewport = is_Visible
+        
         return True
     
 
@@ -21,14 +29,16 @@ def set_collection_visible(layer_collection, collection_name, is_Visible):
     return False
 
 
-set_collection_visible(bpy.context.view_layer.layer_collection, "Internal", False)
-
+set_collection_visible(bpy.context.view_layer.layer_collection, "Rig1", False)
 
 
 
 
 meta_rig = bpy.data.objects.get("Rig")
 primary_armature = bpy.data.objects.get("__PrimaryArmature")
+
+meta_rig.hide_select = False
+meta_rig.hide_viewport = False
 
 
 with bpy.data.libraries.load(blender_file_with_tool, link=False) as (data_from, data_to):
@@ -62,9 +72,6 @@ bpy.ops.object.join()
 
 
 #####
-
-
-
 
 
 
@@ -131,7 +138,7 @@ bpy.context.active_object.data.bones.active = handleBone.bone
 with bpy.context.temp_override(active_object=handleBone):
     bpy.ops.constraint.childof_set_inverse(constraint="Child Of", owner='BONE')
 
-handleBone.bone.use_inherit_rotation = True
+handleBone.bone.use_inherit_rotation = False
     
 
 
@@ -161,4 +168,4 @@ with bpy.context.temp_override(active_object=handleBone):
 
 ######
 
-set_collection_visible(bpy.context.view_layer.layer_collection, "Internal", True)
+meta_rig.hide_set(True)
