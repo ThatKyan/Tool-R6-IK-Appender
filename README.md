@@ -1,5 +1,7 @@
-This is a script for Blender, that quickly appends a tool rig to the R6 IK + FK Blender Rig by Aeresei. 
-https://devforum.roblox.com/t/r6-ik-fk-blender-rig-v21/3586405
+This is a script for Blender, that automatically appends a tool rig to the R6 IK + FK Blender Rig by Aeresei
+https://devforum.roblox.com/t/r6-ik-fk-blender-rig-v21/3586405.
+
+Instead of going and creating constraints, joining armatures, parenting bones, this script will do it all for you so that animations made with the R6 IK + FK rig with a tool can be exported to Roblox through the Blender plugin.
 
 <bold> Steps: </bold>
 
