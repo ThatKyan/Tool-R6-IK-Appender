@@ -167,5 +167,5 @@ with bpy.context.temp_override(active_object=handleBone):
     
 
 ######
-set_collection_visible(bpy.context.view_layer.layer_collection, "Internal", True)
+
 meta_rig.hide_set(True)
