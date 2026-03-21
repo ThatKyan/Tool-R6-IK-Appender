@@ -30,7 +30,7 @@ def set_collection_visible(layer_collection, collection_name, is_Visible):
 
 
 set_collection_visible(bpy.context.view_layer.layer_collection, "Rig1", False)
-
+set_collection_visible(bpy.context.view_layer.layer_collection, "Internal", False)
 
 
 
@@ -167,5 +167,5 @@ with bpy.context.temp_override(active_object=handleBone):
     
 
 ######
-
+set_collection_visible(bpy.context.view_layer.layer_collection, "Internal", True)
 meta_rig.hide_set(True)
